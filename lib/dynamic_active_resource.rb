@@ -9,11 +9,8 @@ $:.unshift File.expand_path(File.dirname(__FILE__))
 
 require 'dynamic_active_resource/common_class_methods'
 require 'dynamic_active_resource/helpers'
+require 'dynamic_active_resource/version'
+require 'dynamic_active_resource/base'
 
 module DynamicActiveResource
-  class Base < ActiveResource::Base
-    def self.inherited(subclass)
-      subclass.extend(DynamicActiveResource::CommonClassMethods)
-    end
-  end
 end

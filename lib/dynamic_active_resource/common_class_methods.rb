@@ -17,7 +17,7 @@ module DynamicActiveResource
   #
   # Person.find(:all) => It bombs
   #
-  # This module provides a mechanism by which you can get rid of this problem. Extend this
+  # This module provides a mechanism by which you can get rid of this problem. Extend DynamicActiveResource::Base
   # class in the actual class itself. Do not extend the extended class from ActiveResource::Base.
   # 
   # E.g.
