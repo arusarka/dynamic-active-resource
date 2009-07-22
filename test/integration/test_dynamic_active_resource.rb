@@ -1,4 +1,4 @@
-require "../lib/dynamic_active_resource"
+require "../../lib/dynamic_active_resource"
 
 class Card < DynamicActiveResource::Base
   module ClassMethods
