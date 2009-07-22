@@ -14,3 +14,6 @@ require 'dynamic_active_resource/base'
 
 module DynamicActiveResource
 end
+
+# shorter name
+DynActiveResource = DynamicActiveResource
