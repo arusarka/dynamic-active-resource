@@ -1,6 +1,6 @@
 require "../../lib/dynamic_active_resource"
 
-class Card < DynamicActiveResource::Base
+class Card < DynARBase
   module ClassMethods
     def find_without_pagination(*args)
       scope = args.slice!(0)
@@ -18,4 +18,7 @@ Card.site = 'http://localhost:9090/projects/api_test'
 Card.user = 'testuser'
 Card.password = 'testuser'
 
+puts Card.find_without_pagination(:all).size
+
+Card.site = 'http://localhost:9090/projects/agile_hybrib_project'
 puts Card.find_without_pagination(:all).size
