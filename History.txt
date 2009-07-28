@@ -1,3 +1,9 @@
+0.1.0
+-----
+
+* added active record like associations, very lightweight. supported relationships : has_many, and belongs_to
+look in the README for examples
+
 0.0.2
 -----
 
