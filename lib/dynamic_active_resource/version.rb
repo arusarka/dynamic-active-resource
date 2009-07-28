@@ -1,8 +1,8 @@
 module DynamicActiveResource
   module Version
     Major = '0'
-    Minor = '0'
-    Tiny  = '2'
+    Minor = '1'
+    Tiny  = '0'
     
     def self.to_s
       [Major, Minor, Tiny].join('.')

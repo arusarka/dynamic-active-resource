@@ -7,6 +7,8 @@ end
 
 $:.unshift File.expand_path(File.dirname(__FILE__))
 
+require 'dynamic_active_resource/associations'
+require 'dynamic_active_resource/common_dynamic_class_instance_methods'
 require 'dynamic_active_resource/common_class_methods'
 require 'dynamic_active_resource/helpers'
 require 'dynamic_active_resource/version'
@@ -16,4 +18,4 @@ module DynamicActiveResource
 end
 
 # shorter name
-DynActiveResource = DynamicActiveResource
+DynAR = DynamicActiveResource

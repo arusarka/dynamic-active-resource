@@ -66,6 +66,7 @@ module DynamicActiveResource
 
     # routes to active resource find
     def find(*args)
+      return @resource_class.find_without_pagination(*args) if(@resource_class.respond_to?(:find_without_pagination))
       scope = args.slice!(0)
       options = args.slice!(0) || {}
       obj = @resource_class.find(scope, options)
@@ -91,6 +92,9 @@ module DynamicActiveResource
       created_class_name = "#{self}::#{class_name}#{Helpers.fast_token()}"
       eval "#{created_class_name} = created_class"
 
+      # include the common dynamic methods 
+      created_class.send(:include, DynamicActiveResource::CommonDynamicClassInstanceMethods)
+      
       # includes a module called InstanceMethods in the class created dynamically
       # if it is defined inside the wrapper class
       inst_meth_mod_name = instance_methods_module_name()
@@ -100,6 +104,8 @@ module DynamicActiveResource
       # it is defined inside the wrapper class
       class_meth_mod_name = class_methods_module_name()
       created_class.extend(self.const_get(class_meth_mod_name)) if class_meth_mod_name
+      # put the associations in the created class also
+      created_class.instance_variable_set(:@associations, @associations)
 
       created_class
     end
@@ -109,12 +115,12 @@ module DynamicActiveResource
     end
 
     def instance_methods_module_name
-      inst_meth_mod_name = 'InstanceMethods'
+      inst_meth_mod_name = 'DynamicClassInstanceMethods'
       self.constants.detect { |const| const.split('::')[-1] =~ /#{inst_meth_mod_name}/ }
     end
 
     def class_methods_module_name
-      class_meth_mod_name = 'ClassMethods'
+      class_meth_mod_name = 'DynamicClassSingletonMethods'
       self.constants.detect { |const| const.split('::')[-1] =~ /#{class_meth_mod_name}/ }
     end
 
