@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'dynamic-active-resource'
-  s.version = '0.1.6'
+  s.version = '0.1.7'
   s.author = 'asur'
   s.email = 'arusarka@gmail.com'
   s.homepage = 'http://github.com/arusarka/dynamic-active-resource/'
