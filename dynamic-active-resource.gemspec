@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
     "lib/dynamic_active_resource/associations.rb", "lib/dynamic_active_resource/base.rb", "lib/dynamic_active_resource/common_class_methods.rb", "lib/dynamic_active_resource/common_dynamic_class_instance_methods.rb",
     "lib/dynamic_active_resource/helpers.rb", "lib/dynamic_active_resource/version.rb",
     "lib/dynamic_active_resource.rb", "test/integration/test_dynamic_active_resource.rb", "test/integration/test_dynamic_active_resource2.rb", "spec/dynamic_active_resource/associations_spec.rb",
-    "spec/dynamic_active_resource/base_spec.rb", "spec/dynamic_active_resource/common_dynamic_class_instance_methods_spec.rb", "spec/dynamic_active_resource/version_spec.rb", 'spec/spec_helper', 
+    "spec/dynamic_active_resource/base_spec.rb", "spec/dynamic_active_resource/common_dynamic_class_instance_methods_spec.rb", "spec/dynamic_active_resource/version_spec.rb", 'spec/spec_helper.rb', 
     'README', 'History.txt', 'init.rb']
   s.require_paths = ['lib']
   s.extra_rdoc_files = ['README']
