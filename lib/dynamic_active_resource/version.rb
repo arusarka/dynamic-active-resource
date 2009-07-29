@@ -2,7 +2,7 @@ module DynamicActiveResource
   module Version
     Major = '0'
     Minor = '2'
-    Tiny  = '0'
+    Tiny  = '1'
     
     def self.to_s
       [Major, Minor, Tiny].join('.')
