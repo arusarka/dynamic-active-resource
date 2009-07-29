@@ -89,14 +89,16 @@ module DynamicActiveResource
   # only the first few results. To overcome this, include in your DynamicClassSingletonMethods module
   # a method called find_without_pagination. In that method route it to acitve resource find with 
   # proper parameters. An example of the method implementation is 
-  # 
-  # def find_without_pagination(*args)
-  #   scope = args.slice!(0)
-  #   options = args.slice!(0) || {}
-  #   options[:params] ||= {}
-  #   options[:params].merge!({:page => 'all'})
-  #   # call ActiveResource::Base::find with proper options
-  #   find(scope, options)
+  #
+  # module DynamicClassSingletonMethods
+  #   def find_without_pagination(*args)
+  #     scope = args.slice!(0)
+  #     options = args.slice!(0) || {}
+  #     options[:params] ||= {}
+  #     options[:params].merge!({:page => 'all'})
+  #     # call ActiveResource::Base::find with proper options
+  #     find(scope, options)
+  #   end
   # end
   # 
   # The class level find method will automatically pick up this method if defined as a method in the
@@ -195,6 +197,7 @@ module DynamicActiveResource
   #
   # car = Car.find('WB1234I')
   # owner = car.person
+  
   class Base < ActiveResource::Base
     def self.inherited(subclass)
       subclass.extend(DynamicActiveResource::CommonClassMethods)

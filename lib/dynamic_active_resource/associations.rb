@@ -1,3 +1,7 @@
+require 'dynamic_active_resource/associations/base'
+require 'dynamic_active_resource/associations/has_many'
+require 'dynamic_active_resource/associations/belongs_to'
+
 module DynamicActiveResource
   module Associations
     def has_many(assosiation_sym, options = {})
@@ -15,7 +19,3 @@ module DynamicActiveResource
     end
   end
 end
-
-require 'dynamic_active_resource/associations/base'
-require 'dynamic_active_resource/associations/has_many'
-require 'dynamic_active_resource/associations/belongs_to'
