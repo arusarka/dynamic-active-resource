@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'dynamic-active-resource'
-  s.version = '0.1.7'
+  s.version = '0.1.8'
   s.author = 'asur'
   s.email = 'arusarka@gmail.com'
   s.homepage = 'http://github.com/arusarka/dynamic-active-resource/'
@@ -11,8 +11,7 @@ Gem::Specification.new do |s|
   reflected. So this gem allows to dynamically create active resource classes. This gem also
   provides very lightweight activerecord like associations.
   EOS
-  s.files = Dir['lib/**/*.rb'] + Dir['spec/**/*_spec.rb'] + Dir['spec/spec_helper.rb'] + Dir['test/**/*.rb'] + ['README', 'History.txt']
-  s.require_path = 'lib'
+  s.files = Dir['lib/**/*.rb'] + Dir['spec/**/*_spec.rb'] + Dir['spec/spec_helper.rb'] + Dir['test/**/*.rb'] + ['README', 'History.txt'] + Dir['lib/**/*']
   s.extra_rdoc_files = ['README']
   s.add_dependency('activeresource')
 end
